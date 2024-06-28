@@ -11,8 +11,7 @@ function Signupgust() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [conPass, setConfirmPassword] = useState('');
-    axios.defaults.withCredentials = true;
-
+   
     const submit = (e) => {
         e.preventDefault();
         const user = {
