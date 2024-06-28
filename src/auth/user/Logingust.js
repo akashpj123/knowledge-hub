@@ -16,7 +16,7 @@ function Logingust() {
     const submit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8025/api/login', {
+            const response = await axios.post('https://knowledge-back.vercel.app/api/login', {
                 
                 email: email,
                 password: password,

@@ -20,7 +20,7 @@ const UserProfileCard = () => {
     const fetchUserProfile = async () => {
       try {
         const token = user?.token || admin?.token;
-        const response = await axios.get('http://localhost:8025/api/getuser', {
+        const response = await axios.get('https://knowledge-back.vercel.app/api/getuser', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -43,7 +43,7 @@ const UserProfileCard = () => {
     const fetchProfileData = async () => {
       try {
         const token = user?.token || admin?.token;
-        const response = await axios.get(`http://localhost:8025/api/getProfileById/${userId}`, {
+        const response = await axios.get(`https://knowledge-back.vercel.app/api/getProfileById/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

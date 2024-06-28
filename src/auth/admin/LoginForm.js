@@ -17,7 +17,7 @@ function LoginForm() {
     const submit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8025/api/loginAdmin', {
+            const response = await axios.post('https://knowledge-back.vercel.app/api/loginAdmin', {
                 email: email,
                 password: password,
             });

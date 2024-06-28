@@ -21,7 +21,7 @@ function Adddet() {
     const fetchUserProfile = async () => {
       try {
         const token = user?.token || admin?.token;
-        const response = await axios.get('http://localhost:8025/api/getuser', {
+        const response = await axios.get('https://knowledge-back.vercel.app/api/getuser', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -57,7 +57,7 @@ function Adddet() {
 
     try {
       const token = user?.token || admin?.token;
-      const response = await axios.post('http://localhost:8025/api/createProfile', profileData, {
+      const response = await axios.post('https://knowledge-back.vercel.app/api/createProfile', profileData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -22,7 +22,7 @@ function Shownow() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get('http://localhost:8025/api/viewPost');
+        const res = await axios.get('https://knowledge-back.vercel.app/api/viewPost');
         const posts = res.data.map(post => ({ ...post, liked: false, saved: false, comments: [] }));
         setData(posts);
         setOriginalData(posts);
@@ -37,7 +37,7 @@ function Shownow() {
     const fetchUserProfile = async () => {
       try {
         const token = admin?.token;
-        const response = await axios.get('http://localhost:8025/api/getalluser', {
+        const response = await axios.get('https://knowledge-back.vercel.app/api/getalluser', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -92,7 +92,7 @@ function Shownow() {
 
     try {
       const userComment = { comment: commentText };
-      await axios.put(`http://localhost:8025/api/createComment/${postId}`, userComment, {
+      await axios.put(`https://knowledge-back.vercel.app/api/createComment/${postId}`, userComment, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log('Comment submitted successfully.');
@@ -105,7 +105,7 @@ function Shownow() {
 
   const fetchComments = async (postId) => {
     try {
-      const res = await axios.get(`http://localhost:8025/api/getCommentById/${postId}`);
+      const res = await axios.get(`https://knowledge-back.vercel.app/api/getCommentById/${postId}`);
       setComments(res.data)
       console.log('====================================');
         console.log(setComments);
@@ -121,7 +121,7 @@ function Shownow() {
       const token = admin?.token;
       if (token) {
         try {
-          await axios.delete(`http://localhost:8025/api/deletePostById/${usersid}`, {
+          await axios.delete(`https://knowledge-back.vercel.app/api/deletePostById/${usersid}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

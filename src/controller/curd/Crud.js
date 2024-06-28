@@ -18,7 +18,7 @@ function Crud() {
         const fetchUserId = async () => {
             try {
                 const token = user?.token || admin?.token;
-                const response = await axios.get('http://localhost:8025/api/getuser', {
+                const response = await axios.get('https://knowledge-back.vercel.app/api/getuser', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -42,7 +42,7 @@ function Crud() {
             try {
                 const token = user?.token || admin?.token;
                 if (userId) { // Ensure userId is truthy before making the request
-                    const response = await axios.get(`http://localhost:8025/api/userviewPost/${userId}`, {
+                    const response = await axios.get(`https://knowledge-back.vercel.app/api/userviewPost/${userId}`, {
                         headers: {
                             Authorization: `Bearer ${token}`
                         },
@@ -67,7 +67,7 @@ function Crud() {
         if (confirmDelete) {
             const token = user?.token || admin?.token;
             if (token) {
-                axios.delete(`http://localhost:8025/api/deletePostById/${postId}`, {
+                axios.delete(`https://knowledge-back.vercel.app/api/deletePostById/${postId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     },

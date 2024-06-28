@@ -16,7 +16,7 @@ function App() {
   const logoutUser = async () => {
     try {
       if (user) {
-        await axios.post('http://localhost:8025/api/logout', {}, {
+        await axios.post('https://knowledge-back.vercel.app/api/logout', {}, {
           headers: { 'Authorization': `Bearer ${user.token}` }
         });
         dispatch(removeUser());
@@ -30,7 +30,7 @@ function App() {
   const logoutAdmin = async () => {
     try {
       if (admin) {
-        await axios.post('http://localhost:8025/api/logout', {}, {
+        await axios.post('https://knowledge-back.vercel.app/api/logout', {}, {
           headers: { 'Authorization': `Bearer ${admin.token}` }
         });
         dispatch(removeAdmin());

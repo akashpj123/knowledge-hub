@@ -19,7 +19,7 @@ function Createedit() {
     const fetchData = async () => {
         try {
             const token = user?.token || admin?.token;
-            const response = await axios.get(`http://localhost:8025/api/getPostById/${id}`, {
+            const response = await axios.get(`https://knowledge-back.vercel.app/api/getPostById/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -62,7 +62,7 @@ function Createedit() {
 
         try {
             const token = user?.token || admin?.token;
-            await axios.put(`http://localhost:8025/api/updatePostById/${id}`, formData, {
+            await axios.put(`https://knowledge-back.vercel.app/api/updatePostById/${id}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

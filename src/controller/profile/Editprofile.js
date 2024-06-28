@@ -19,7 +19,7 @@ function Editprofile() {
         const fetchData = async () => {
             try {
                 const token = user?.token || admin?.token;
-                const response = await axios.get(`http://localhost:8025/api/getProfileById/${id}`, {
+                const response = await axios.get(`https://knowledge-back.vercel.app/api/getProfileById/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -52,7 +52,7 @@ function Editprofile() {
 
         try {
             const token = user?.token || admin?.token;
-            const response = await axios.put(`http://localhost:8025/api/updateProfileById/${id}`, formData, {
+            const response = await axios.put(`https://knowledge-back.vercel.app/api/updateProfileById/${id}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

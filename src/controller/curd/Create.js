@@ -31,7 +31,7 @@ function Create() {
         };
 
         // Axios POST request with Authorization header
-        axios.post('http://localhost:8025/api/createPost', formData, {
+        axios.post('https://knowledge-back.vercel.app/api/createPost', formData, {
             headers: {
                 Authorization: `Bearer ${user.token || admin.token}` // Correctly accessing token here
             },

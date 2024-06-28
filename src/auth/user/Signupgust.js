@@ -22,7 +22,7 @@ function Signupgust() {
             conform_password: conPass // Corrected variable name
         };
 
-        axios.post('http://localhost:8025/api/signup', user)
+        axios.post('https://knowledge-back.vercel.app/api/signup', user)
             .then(response => {
                 navigate('/logingust');
             })

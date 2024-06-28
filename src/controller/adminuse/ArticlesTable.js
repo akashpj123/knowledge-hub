@@ -10,7 +10,7 @@ const ArticlesTable = () => {
     const fetchUserProfile = async () => {
       try {
         const token = admin?.token;
-        const response = await axios.get('http://localhost:8025/api/getalluser', {
+        const response = await axios.get('https://knowledge-back.vercel.app/api/getalluser', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,7 +35,7 @@ const ArticlesTable = () => {
       const token = admin?.token;
       if (token) {
         try {
-          await axios.delete(`http://localhost:8025/api/delectuser/${postId}`, {
+          await axios.delete(`https://knowledge-back.vercel.app/api/delectuser/${postId}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

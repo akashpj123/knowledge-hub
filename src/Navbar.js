@@ -15,7 +15,7 @@ function Navbar() {
     try {
       if (user) {
         console.log('User token:', user.token);
-        const response = await axios.post('http://localhost:8025/api/logout', {}, {
+        const response = await axios.post('https://knowledge-back.vercel.app/api/logout', {}, {
           headers: { 'Authorization': `Bearer ${user.token}` }
         });
         console.log('Logout response:', response.data);
@@ -34,7 +34,7 @@ function Navbar() {
     try {
       if (admin) {
         console.log('Admin token:', admin.token);
-        const response = await axios.post('http://localhost:8025/api/admin/logout', {}, {
+        const response = await axios.post('https://knowledge-back.vercel.app/api/admin/logout', {}, {
           headers: { 'Authorization': `Bearer ${admin.token}` }
         });
         console.log('Logout response:', response.data);
